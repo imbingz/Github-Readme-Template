@@ -288,3 +288,23 @@ function generateREADME(answers) {
 
   `
 }
+
+
+// User async... await 
+async function init() {
+  console.log('hi');
+
+  try {
+    const answers = await promptUser();
+
+    const content = generateREADME(answers);
+
+    await writeFileAsync('README.md', content);
+
+    console.log("Successfully wrote to README.md");
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+init(); 
