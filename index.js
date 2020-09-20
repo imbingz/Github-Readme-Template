@@ -5,6 +5,9 @@ const inquirer = require('inquirer');
 const fs = require('fs')
 const util = require('util')
 
+// Wrap fs.writeFile inside util.promisify
+const writeFileAsync = util.promisify(fs.writeFile)
+
 // Get the current year 
 let year = new Date().getFullYear();
 
@@ -53,29 +56,29 @@ const questions = [
 			return 'Enter your Github Project Repo name';
 		},
 	},
-  {
-    //Check on title 
-		type: 'confirm',
-		message: 'Do you want to use your Repo Name as your project title?',
-		name: 'useRepoName',
-		default: true,
-	},
-  {
+  // {
+  //   //Check on title 
+	// 	type: 'confirm',
+	// 	message: 'Do you want to use your Repo Name as your project title?',
+	// 	name: 'useRepoName',
+	// 	default: true,
+	// },
+  // {
     // Enter Title if different from REPO name
-		type: 'input',
-		message: 'Enter your project title',
-		name: 'title',
-		when: function(answers) {
-			return answers.useRepoName !== true;
-		},
-		validate: function(title) {
-			if (title) {
-				return true;
-			}
+	// 	type: 'input',
+	// 	message: 'Enter your project title',
+	// 	name: 'title',
+	// 	when: function(answers) {
+	// 		return answers.useRepoName !== true;
+	// 	},
+	// 	validate: function(title) {
+	// 		if (title) {
+	// 			return true;
+	// 		}
 
-			return 'Enter your project title';
-		},
-	},
+	// 		return 'Enter your project title';
+	// 	},
+	// },
   {
     //Check on Screenshots and/or Demo
 		type: 'confirm',
@@ -190,8 +193,98 @@ const questions = [
 /* FUNCTIONS ==================================================================================================== */
 
 
-inquirer.prompt(questions).then((answers) => {
-	console.log(JSON.stringify(answers, null, '\t'));
-});
+// inquirer.prompt(questions).then((answers) => {
+// 	console.log(JSON.stringify(answers, null, '\t'));
+// });
 
+//Create a function to prompt user questions 
+function promptUser() {
+  return inquirer.prompt(questions)
+}
 
+// Create a function to generate README.md
+function generateREADME(answers) {
+  return `
+  
+  # ${answers.repoName}
+
+  <p>
+  <a href="https://github.com/{answers.username}" target="_blank">
+    <img src="https://img.shields.io/github/followers/{answers.username}?label=Follow&logoColor=purple&style=social" alt="github-follow">
+  </a>
+  <a href="https://choosealicense.com/licenses/mit/" target="_blank">
+    <img alt="license-mit" src="https://img.shields.io/badge/License-MIT-brightgreen.svg" />
+  </a>
+  <a href="https://choosealicense.com/licenses/mpl-2.0/" target="_blank">
+    <img alt="license-mozilla" src="https://img.shields.io/badge/License-Mozilla%20PL%202.0-blue.svg" />
+  </a>
+  <a href="https://choosealicense.com/licenses/apache-2.0/"  target="_blank">
+    <img alt="license-apache" src="https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg" />
+  </a>
+  <a href="https://choosealicense.com/licenses/gpl-3.0/"  target="_blank">
+    <img alt="license-gnu" src="https://img.shields.io/badge/License-GNU%20GPLv3-success.svg" />
+  </a>
+  <a href="https://nodejs.org/en/" target="_blank">
+    <img alt="node.js" src="https://img.shields.io/node/v/c?color=blueviolet" />
+  </a>
+  <a href="https://www.npmjs.com/package/inquirer" target="_blank">
+    <img alt="npm" src="https://img.shields.io/npm/v/npm?color=important&logo=npm" />
+  </a>
+  <a href="https://twitter.com/imbingz" target="_blank">
+    <img alt="twitter-follow" src="https://img.shields.io/twitter/follow/imbingz?label=Follow&style=social" />
+  </a>
+</p>
+
+  ## Table of Content
+  * [ Project Links ](#Project-Links)
+  * [ Screenshots / Demo ](#Screenshots)
+  * [ Description ](#Desciption)
+  * [ Technologies ](#Technologies)
+  * [ Installation ](#Installation)
+  * [ Usage ](#Usage)
+  * [ Credits and Reference ](#Credits-and-Reference)
+  * [ Tests ](#Tests)
+  * [ Author Info ](#Author-info)
+  * [ License ](#License)
+  #
+
+  ##  Project Links
+  https://github.com/${answers.username}/${answers.repoName}
+
+  ## Screenshots / Demo
+  <kbd>![screenshot-demo](./assets/images/m1.png)</kbd>
+  
+  ## Description 
+
+  #### Project Objective
+  ${answers.objective}
+  
+  #### User Story
+  ${answers.userStory}
+
+  ## Technologies 
+  ${answers.tech}
+
+  ## Installation
+  ${answers.install}
+
+  ## Usage 
+  ${answers.use}
+  
+  ## Credits and Reference
+  ${answers.credits}
+
+  ## Tests
+  ${answers.test}
+
+  ## Author Info
+  Contact the author with any questions! < /br>
+  Github Username: ${answers.username}
+
+  ## License
+  This project is [${answers.license}](https://choosealicense.com/licenses/mit/) licensed.<br />
+
+  Copyright © ${year} [${answers.authorName}]
+
+  `
+}
