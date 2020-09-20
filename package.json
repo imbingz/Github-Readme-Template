@@ -1,0 +1,26 @@
+{
+  "name": "github-readme-template",
+  "version": "1.0.0",
+  "description": "A good github README generator that helps developers to work more efficiently",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imbingz/Github-Readme-Template.git"
+  },
+  "keywords": [
+    "cli",
+    "inquirer"
+  ],
+  "author": "Bing Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imbingz/Github-Readme-Template/issues"
+  },
+  "homepage": "https://github.com/imbingz/Github-Readme-Template#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
