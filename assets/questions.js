@@ -158,7 +158,7 @@ const questions = [
 	{
 		// License
 		type: 'list',
-		message: 'Select license',
+		message: 'Select a license',
 		name: 'license',
 		choices: [
 			{
@@ -166,8 +166,16 @@ const questions = [
 				value: 'mit'
 			},
 			{
-				name: 'GNU-GPLv3',
+				name: 'GNU GPLv3',
 				value: 'gpl-3.0'
+			},
+			{
+				name: 'GNU AGPLv3',
+				value: 'agpl-3.0'
+			},
+			{
+				name: 'GNU LGPLv3',
+				value: 'lgpl-3.0'
 			},
 			{
 				name: 'APACHE 2.0',
@@ -176,7 +184,39 @@ const questions = [
 			{
 				name: 'Mozilla Public 2.0',
 				value: 'mpl-2.0'
-			}],
+			},
+			{
+				name: 'The Unlicense',
+				value: 'unlicense'
+			},
+			{
+				name: 'Boost Software 1.0 ',
+				value: 'bsl-1.0'
+			}
+		],
+	},
+	{
+		//Check on Twitter follow
+		type: 'confirm',
+		name: 'twitter',
+		message: 'Would you like others to connect with you on Twitter?',
+		default: false,
+	},
+	{
+		// Get image path and/or URL
+		type: 'input',
+		name: 'twitterName',
+		message: 'Enter your Twitter username',
+		when: function(answers) {
+			return answers.twitter !== false;
+		},
+		validate: function(imageURL) {
+			if (twitterName) {
+				return true;
+			}
+
+			return 'Enter your Twitter username';
+		},
 	},
 ];
 
