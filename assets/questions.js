@@ -2,7 +2,7 @@ const questions = [
 	{
 		//Author Name
 		type: 'input',
-		message: 'Enter the full name(s) of the project author(s). (User comma "," to separate each author)',
+		message: 'Enter your FULL name',
 		name: 'authorName',
 		validate: function(name) {
 			// console.log(name.split(' ').length);
@@ -10,7 +10,21 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to enter the FULL name(s) of the project author(s). (User comma "," to separate each author)';
+			return 'It is required to enter your FULL name.';
+		},
+	},
+	{
+		//Author Email
+		type: 'input',
+		message: 'Enter your email',
+		name: 'authorName',
+		validate: function(email) {
+			// console.log(name.split(' ').length);
+			if (email) {
+				return true;
+			}
+
+			return 'It is required to enter your email.';
 		},
 	},
 	{
@@ -23,7 +37,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to enter your github username';
+			return 'It is required to enter your github username.';
 		},
 	},
 	{
@@ -36,7 +50,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to enter your Github Project Repo name';
+			return 'It is required to enter your Github Project Repo name.';
 		},
 	},
 	//  Project Title
@@ -52,7 +66,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to enter your project title';
+			return 'It is required to enter your project title.';
 		},
 	},
 	{
@@ -66,7 +80,7 @@ const questions = [
 		// Get image path and/or URL
 		type: 'input',
 		name: 'imageURL',
-		message: 'Enter the image paths or urls of screenshots or demo',
+		message: 'Enter the image paths or urls of screenshots or demo.',
 		when: function(answers) {
 			return answers.screenshots !== false;
 		},
@@ -75,7 +89,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to provide the image paths or urls of screenshots or demo';
+			return 'Provide the image paths or urls of screenshots or demo.';
 		},
 	},
 	{
@@ -88,7 +102,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to provide your project objective?';
+			return 'It is required to provide your project objective.';
 		},
 	},
 	{
@@ -101,20 +115,20 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to provide the User Story for your propject';
+			return 'It is required to provide the User Story for your propject.';
 		},
 	},
 	{
 		//Technologies used
 		type: 'input',
-		message: 'List the technologies used for the Project',
+		message: 'List the technologies used for the Project. (Use comma "," to separate each technology)',
 		name: 'technologies',
 		validate: function(tech) {
 			if (tech) {
 				return true;
 			}
 
-			return 'It is required to list the technologies used for the Project';
+			return 'It is required to list the technologies used for the Project.';
 		},
 	},
 	{
@@ -127,7 +141,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to provide steps to install your project?';
+			return 'It is required to provide steps to install your project.';
 		},
 	},
 	{
@@ -140,7 +154,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to provide instructions on how to use your project';
+			return 'It is required to provide instructions on how to use your project.';
 		},
 	},
 	{
@@ -203,14 +217,14 @@ const questions = [
 		default: false,
 	},
 	{
-		// Get image path and/or URL
+		// Get twitter username
 		type: 'input',
 		name: 'twitterName',
 		message: 'Enter your Twitter username',
 		when: function(answers) {
 			return answers.twitter !== false;
 		},
-		validate: function(imageURL) {
+		validate: function(twitterName) {
 			if (twitterName) {
 				return true;
 			}
