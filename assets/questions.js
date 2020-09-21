@@ -2,7 +2,7 @@ const questions = [
 	{
 		//Author Name
 		type: 'input',
-		message: 'Enter the full name(s) of the project author(s)',
+		message: 'Enter the full name(s) of the project author(s). (User comma "," to separate each author)',
 		name: 'authorName',
 		validate: function(name) {
 			// console.log(name.split(' ').length);
@@ -10,7 +10,7 @@ const questions = [
 				return true;
 			}
 
-			return 'Please enter the FULL name(s) of the project author(s)';
+			return 'It is required to enter the FULL name(s) of the project author(s). (User comma "," to separate each author)';
 		},
 	},
 	{
@@ -23,20 +23,20 @@ const questions = [
 				return true;
 			}
 
-			return 'Enter your github username';
+			return 'It is required to enter your github username';
 		},
 	},
 	{
 		// Github REPO name
 		type: 'input',
-		message: 'Enter your Project Github Repo name (case sensitive)',
+		message: 'Enter your Project Github Repo name (Be sure your input is the SAME as the REPO name on Github.)',
 		name: 'repoName',
 		validate: function(reponame) {
 			if (reponame) {
 				return true;
 			}
 
-			return 'Enter your Github Project Repo name';
+			return 'It is required to enter your Github Project Repo name';
 		},
 	},
 	//  Project Title
@@ -52,7 +52,7 @@ const questions = [
 				return true;
 			}
 
-			return 'Enter your project title';
+			return 'It is required to enter your project title';
 		},
 	},
 	{
@@ -75,7 +75,7 @@ const questions = [
 				return true;
 			}
 
-			return 'Enter the image paths or urls of screenshots or demo';
+			return 'It is required to provide the image paths or urls of screenshots or demo';
 		},
 	},
 	{
@@ -88,7 +88,7 @@ const questions = [
 				return true;
 			}
 
-			return 'What is your project objective?';
+			return 'It is required to provide your project objective?';
 		},
 	},
 	{
@@ -101,7 +101,7 @@ const questions = [
 				return true;
 			}
 
-			return 'Provide the User Story for your propject';
+			return 'It is required to provide the User Story for your propject';
 		},
 	},
 	{
@@ -114,7 +114,7 @@ const questions = [
 				return true;
 			}
 
-			return 'List the technologies used for the Project';
+			return 'It is required to list the technologies used for the Project';
 		},
 	},
 	{
@@ -127,7 +127,7 @@ const questions = [
 				return true;
 			}
 
-			return 'What are the steps required to install your project?';
+			return 'It is required to provide steps to install your project?';
 		},
 	},
 	{
@@ -140,7 +140,7 @@ const questions = [
 				return true;
 			}
 
-			return 'Provide instructions on how to use your project';
+			return 'It is required to provide instructions on how to use your project';
 		},
 	},
 	{
@@ -158,7 +158,7 @@ const questions = [
 	{
 		// License
 		type: 'list',
-		message: 'Select a license',
+		message: 'Please select a license for your project.',
 		name: 'license',
 		choices: [
 			{
@@ -215,7 +215,7 @@ const questions = [
 				return true;
 			}
 
-			return 'Enter your Twitter username';
+			return 'Enter your Twitter username for others to connect with you on Twitter';
 		},
 	},
 ];
