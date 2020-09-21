@@ -1,7 +1,7 @@
 /* GLOBAL VARIALBES ==================================================================================================== */
 
 //Import inquirer and node modules
-const inquirer = require('inquirer');
+const { prompt } = require('inquirer');
 const { writeFile } = require('fs');
 const { promisify } = require('util');
 
@@ -16,17 +16,14 @@ const generateREADME = require('./assets/template')
 const writeFileAsync = promisify(writeFile);
 
 
-
-
-
 /* FUNCTIONS ==================================================================================================== */
 
 // Inital welcome message
-console.log('Welcome to Github README generator');
+console.log('Welcome to Github README generator!');
 
 //Create a function to prompt user questions
 function promptUser() {
-	return inquirer.prompt(questions);
+	return prompt(questions);
 }
 
 // Use async... await
