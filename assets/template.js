@@ -8,8 +8,8 @@ function generateREADME(answers) {
   # ${answers.title}
 
   <p>
-  <a href="https://github.com/${answers.username}" target="_blank">
-    <img src="https://img.shields.io/github/followers/${answers.username}?label=Follow&logoColor=purple&style=social" alt="github-follow">
+  <a href="https://github.com/${answers.username.trim().toLowerCase()}" target="_blank">
+    <img src="https://img.shields.io/github/followers/${answers.username.trim().toLowerCase()}?label=Follow&logoColor=purple&style=social" alt="github-follow">
   </a>
   <a href="https://choosealicense.com/licenses/${answers.license}/" target="_blank">
     <img alt="license-mit" src="https://img.shields.io/badge/License-${answers.license.toUpperCase()}-brightgreen.svg" />
@@ -20,8 +20,8 @@ function generateREADME(answers) {
   <a href="https://www.npmjs.com/package/inquirer" target="_blank">
     <img alt="npm" src="https://img.shields.io/npm/v/npm?color=important&logo=npm" />
   </a>
-  <a href="https://twitter.com/${answers.twitterName}" target="_blank">
-    <img alt="twitter-follow" src="https://img.shields.io/twitter/follow/${answers.twitterName}?label=Follow&style=social" />
+  <a href="https://twitter.com/${answers.twitterName.trim()}" target="_blank">
+    <img alt="twitter-follow" src="https://img.shields.io/twitter/follow/${answers.twitterName.trim()}?label=Follow&style=social" />
   </a>
 </p>
 
@@ -34,12 +34,12 @@ function generateREADME(answers) {
   * [ Usage ](#Usage)
   * [ Credits and Reference ](#Credits-and-Reference)
   * [ Tests ](#Tests)
-  * [ Author Info ](#Author-info)
+  * [ Contact Author ](#Contact-Author)
   * [ License ](#License)
   #
 
   ##  Project Links
-  https://github.com/${answers.username}/${answers.repoName}
+  https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}
 
   ## Screenshots / Demo
   <kbd>![screenshot-demo](${answers.imageURL})</kbd>
@@ -67,14 +67,15 @@ function generateREADME(answers) {
   ## Tests
   ${answers.test}
 
-  ## Author Info
+  ## Contact Author
   Contact the author with any questions! < /br>
-   Github link: [${answers.username}](https://github.com/${answers.username})
+  Github link: [${answers.username.trim().toLowerCase()}](https://github.com/${answers.username.trim().toLowerCase()})
+  Email: ${answers.email}
 
   ## License
   This project is [${answers.license.toUpperCase()}](https://choosealicense.com/licenses/${answers.license}/) licensed.<br />
 
-  Copyright © ${year} [${answers.authorName}]
+  Copyright © ${year} [${answers.authorName.trim().toUpperCase()}]
 
   `;
 }
