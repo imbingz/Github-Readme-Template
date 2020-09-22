@@ -27,7 +27,7 @@
   * [ Usage ](#Usage)
   * [ Credits and Reference ](#Credits-and-Reference)
   * [ Tests ](#Tests)
-  * [ Contact Author ](#Contact-Author)
+  * [ Author Contact](#Author-Contact)
   * [ License ](#License)
   #
 
