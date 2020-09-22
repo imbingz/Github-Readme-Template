@@ -203,13 +203,7 @@ const questions = [
 		type: 'input',
 		message: 'How to test your project?',
 		name: 'test',
-		validate: function(tests) {
-			if (tests) {
-				return true;
-			}
-
-			return 'A professional REAME provides instructions on how to test the project.';
-		},
+		default: 'npm test'
 	},
 	{
 		// License
