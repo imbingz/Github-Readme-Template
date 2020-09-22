@@ -19,7 +19,7 @@ const questions = [
 		message: 'Enter your email',
 		name: 'email',
 		validate: function(email) {
-			let pass = email.match(/\S+@\S+\.\S+/)
+			let pass = email.match(/\S+@\S+\.\S+/g);
 			if (pass) {
 				return true;
 			}
@@ -53,8 +53,36 @@ const questions = [
 			return 'It is required to enter your Github Project Repo name.';
 		},
 	},
-	//  Project Title
 	{
+		//Check on additional project links
+		type: 'confirm',
+		name: 'isLinks',
+		message: 'Besides the porject repo link, Would you like to add additional project link(s)?',
+		default: false,
+	},
+	{
+		// Get addtional project links
+		// https://stackoverflow.com/questions/161738/what-is-the-best-regular-expression-to-check-if-a-string-is-a-valid-url
+		type: 'input',
+		name: 'projectLinks',
+		message: 'Enter the additional project link(s) using the entire link, including the http(s):. (* Use comma "," to separate each link)',
+		when: function(answers) {
+			return answers.isLinks !== false;
+		},
+		validate: function(projectLinks) {
+			for (let i = 0; i < projectLinks.split(',').length; i++) {
+				let pass = projectLinks.split(',')[i].trim().match(/^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$/g);
+			
+			if (pass) {
+				return true;
+			}
+				
+			return 'Provide the valid links of the project using the entire link, including the http(s):';
+			}
+		},
+	},
+	{
+		//  Project Title
 		type: 'input',
 		message: 'Enter your project title',
 		name: 'title',
@@ -66,7 +94,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to enter your project title.';
+			return 'A professional REAME has a project title.';
 		},
 	},
 	{
@@ -102,7 +130,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to provide your project objective.';
+			return 'A professional REAME provides the project objective.';
 		},
 	},
 	{
@@ -115,7 +143,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to provide the User Story for your propject.';
+			return 'A professional REAME provides the User Story for the propject.';
 		},
 	},
 	{
@@ -128,7 +156,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to list the technologies used for the Project.';
+			return 'A professional REAME lists technologies used for the Project.';
 		},
 	},
 	{
@@ -141,7 +169,7 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to provide steps to install your project.';
+			return 'A professional REAME provides steps on how to install the project.';
 		},
 	},
 	{
@@ -154,20 +182,34 @@ const questions = [
 				return true;
 			}
 
-			return 'It is required to provide instructions on how to use your project.';
+			return 'A professional REAME provides instructions on how to use the project.';
 		},
 	},
 	{
-		//Credits / Reference (optional)
+		//Credits / Reference
 		type: 'input',
 		message: 'Enter the parties and links you like to give credits to',
 		name: 'credits',
+		validate: function(credits) {
+			if (credits) {
+				return true;
+			}
+
+			return 'Not possible! Think again. ';
+		},
 	},
 	{
-		// Tests (optional)
+		// Tests
 		type: 'input',
-		message: 'How do you test your project?',
+		message: 'How to test your project?',
 		name: 'test',
+		validate: function(tests) {
+			if (tests) {
+				return true;
+			}
+
+			return 'A professional REAME provides instructions on how to test the project.';
+		},
 	},
 	{
 		// License
@@ -177,19 +219,19 @@ const questions = [
 		choices: [
 			{
 				name: 'MIT',
-				value: 'mit'
+				value: 'mit',
 			},
 			{
 				name: 'GNU GPLv3',
-				value: 'gpl-3.0'
+				value: 'gpl-3.0',
 			},
 			{
 				name: 'GNU AGPLv3',
-				value: 'agpl-3.0'
+				value: 'agpl-3.0',
 			},
 			{
 				name: 'GNU LGPLv3',
-				value: 'lgpl-3.0'
+				value: 'lgpl-3.0',
 			},
 			{
 				name: 'APACHE 2.0',
@@ -197,17 +239,16 @@ const questions = [
 			},
 			{
 				name: 'Mozilla Public 2.0',
-				value: 'mpl-2.0'
-
+				value: 'mpl-2.0',
 			},
 			{
 				name: 'The Unlicense',
-				value: 'unlicense'
+				value: 'unlicense',
 			},
 			{
 				name: 'Boost Software 1.0 ',
-				value: 'bsl-1.0'
-			}
+				value: 'bsl-1.0',
+			},
 		],
 	},
 ];

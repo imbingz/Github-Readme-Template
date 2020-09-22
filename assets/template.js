@@ -4,38 +4,47 @@ let year = new Date().getFullYear();
 // Create a readme Template
 
 function generateREADME(answers) {
+	//Set additional project links
 
-  //Set Screenshots template according to the user iniput
-  let screenshots = '';
-  for (let i = 0; i < answers.imageURL.split(',').length; i++) {
-    screenshots += `<kbd>![screenshot-demo${i + 1}](${answers.imageURL.split(',')[i].trim()})</kbd>`
-  }
-  
-  // Main README structure
+	let additionalProjectLinks = '';
+
+	if (answers.projectLinks) {
+		additionalProjectLinks = answers.projectLinks.split(',').join('<br>');
+	}
+
+	//Set Screenshots template according to the user iniput
+	let screenshots = '';
+	if (answers.imageURL) {
+		for (let i = 0; i < answers.imageURL.split(',').length; i++) {
+			screenshots += `<kbd>![screenshot-demo${i + 1}](${answers.imageURL.split(',')[i].trim()})</kbd>`;
+		}
+	}
+
+	// Main README structure
 	return ` 
   # ${answers.title.toUpperCase()}
 
   <p>
     <a href="https://github.com/${answers.username.trim().toLowerCase()}" target="_blank">
       <img src="https://img.shields.io/github/followers/${answers.username
-        .trim()
-        .toLowerCase()}?label=Follow&logoColor=purple&style=social" alt="github-follow">
+				.trim()
+				.toLowerCase()}?label=Follow&logoColor=purple&style=social" alt="github-follow">
     </a>
     <a href="https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}" target="_blank">
       <img src="https://img.shields.io/github/languages/count/${answers.username
-        .trim()
-        .toLowerCase()}/${answers.repoName.trim()}?color=important" alt="project-languages-used">
+				.trim()
+				.toLowerCase()}/${answers.repoName.trim()}?color=important" alt="project-languages-used">
     </a>
     <a href="https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}" target="_blank">
       <img src="https://img.shields.io/github/languages/top/${answers.username
-        .trim()
-        .toLowerCase()}/${answers.repoName.trim()}?color=blueviolet" alt="project-top-language">
+				.trim()
+				.toLowerCase()}/${answers.repoName.trim()}?color=blueviolet" alt="project-top-language">
     </a>
     <a href="https://choosealicense.com/licenses/${answers.license}/" target="_blank">
       <img alt="license-mit" src="https://img.shields.io/badge/License-${answers.license
-        .toUpperCase()
-        .split('-')
-        .join('v')}-brightgreen.svg" />
+				.toUpperCase()
+				.split('-')
+				.join('v')}-brightgreen.svg" />
     </a>
   </p>
 
@@ -54,7 +63,8 @@ function generateREADME(answers) {
   #
 
   ##  Project Links
-  https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}
+  https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}<br>
+  ${additionalProjectLinks}
 
   ## Screenshots / Demo
   ${screenshots}
