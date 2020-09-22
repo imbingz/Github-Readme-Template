@@ -71,6 +71,6 @@
 
  <hr>
  <p align="center"><i>
-  This README was generated with ❤️ by [imbingz](https://github.com/imbingz)
+  This README was generated with ❤️ by BING Z
  </i></p>
 
