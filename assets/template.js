@@ -4,6 +4,14 @@ let year = new Date().getFullYear();
 // Create a readme Template
 
 function generateREADME(answers) {
+
+  //Set Screenshots template according to the user iniput
+  let screenshots = '';
+  for (let i = 0; i < answers.imageURL.split(',').length; i++) {
+    screenshots += `<kbd>![screenshot-demo${i + 1}](${answers.imageURL.split(',')[i].trim()})</kbd>`
+  }
+  
+  // Main README structure
 	return ` 
   # ${answers.title.toUpperCase()}
 
@@ -49,9 +57,8 @@ function generateREADME(answers) {
   https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}
 
   ## Screenshots / Demo
-  <kbd>![screenshot-demo](${answers.imageURL})</kbd>
+  ${screenshots}
   
-
   ## Project Objective
   ${answers.objective}
   

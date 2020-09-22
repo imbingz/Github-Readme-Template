@@ -43,7 +43,7 @@ const questions = [
 	{
 		// Github REPO name
 		type: 'input',
-		message: 'Enter your Project Github Repo name (Be sure your input is the SAME as the REPO name on Github.)',
+		message: 'Enter your Project Github Repo name (* Be sure your input is the SAME as the REPO name on Github.)',
 		name: 'repoName',
 		validate: function(reponame) {
 			if (reponame) {
@@ -80,7 +80,7 @@ const questions = [
 		// Get image path and/or URL
 		type: 'input',
 		name: 'imageURL',
-		message: 'Enter the image paths or urls of screenshots or demo.',
+		message: 'Enter the image paths or urls of screenshots or demo. (* Use comma "," to separate each path or url)',
 		when: function(answers) {
 			return answers.screenshots !== false;
 		},
@@ -89,7 +89,7 @@ const questions = [
 				return true;
 			}
 
-			return 'Provide the image paths or urls of screenshots or demo.';
+			return 'Provide the image paths or urls of screenshots or demo. ';
 		},
 	},
 	{
@@ -121,7 +121,7 @@ const questions = [
 	{
 		//Technologies used
 		type: 'input',
-		message: 'List the technologies used for the Project. (Use comma "," to separate each technology)',
+		message: 'List the technologies used for the Project. (* Use comma "," to separate each technology)',
 		name: 'technologies',
 		validate: function(tech) {
 			if (tech) {
