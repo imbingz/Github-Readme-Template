@@ -25,8 +25,7 @@
   https://youtu.be/CmcZKuemtUA
  
   ## Screenshots / Demo
-  <kbd>![screenshot-demo1](./assets/images/s1.npg)</kbd><kbd>![screenshot-demo2](https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80)</kbd><kbd>![screenshot-demo3](https://images.unsplash.com/photo-1433838552652-f9a46b332c40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80)</kbd>
-  
+  <kbd>![screenshot-demo1](./assets/images/s1.png)</kbd><kbd>![screenshot-demo2](./assets/images/s2.png)</kbd>
   ## Project Objective
   To create a command-line application that dynamically generates a professional README.md from a user's input using the Inquirer package.  This will allow a project creator to spend more time working on finishing the project and less time creating a good README.
   
