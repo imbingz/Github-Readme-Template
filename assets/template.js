@@ -20,7 +20,9 @@ function generateREADME(answers) {
   </a>
  
  <a href="https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}" target="_blank">
-    <img src="https://img.shields.io/github/languages/top/{answers.username.trim().toLowerCase()}/${answers.repoName.trim()}?color=blueviolet" alt="project-top-language">
+    <img src="https://img.shields.io/github/languages/top/${answers.username
+			.trim()
+			.toLowerCase()}/${answers.repoName.trim()}?color=blueviolet" alt="project-top-language">
   </a>
   <a href="https://choosealicense.com/licenses/${answers.license}/" target="_blank">
     <img alt="license-mit" src="https://img.shields.io/badge/License-${answers.license
@@ -73,8 +75,10 @@ function generateREADME(answers) {
   ${answers.test}
 
   ## Author Contact
-  Contact the author with any questions! < /br>
-  Github link: [${answers.username.trim().toLowerCase()}](https://github.com/${answers.username.trim().toLowerCase()})
+  Contact the author with any questions!<br>
+  Github link: [${answers.username
+		.trim()
+		.toLowerCase()}](https://github.com/${answers.username.trim().toLowerCase()})<br>
   Email: ${answers.email}
 
   ## License
