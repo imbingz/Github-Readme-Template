@@ -22,6 +22,8 @@
 
   ##  Project Links
   https://github.com/imbingz/Github-Readme-Template<br>
+  
+  #### For detailed features of this README GENERATOR, check out this link below
   https://youtu.be/CmcZKuemtUA
  
   ## Screenshots / Demo
