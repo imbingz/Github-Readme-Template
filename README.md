@@ -20,7 +20,8 @@
   ## Table of Content
   * [ Project Links ](#Project-Links)
   * [ Screenshots / Demo ](#Screenshots)
-  * [ Description ](#Desciption)
+  * [ Project Objective ](#Project-Objective)
+  * [ User Story ](#User-Story)
   * [ Technologies ](#Technologies)
   * [ Installation ](#Installation)
   * [ Usage ](#Usage)
@@ -35,13 +36,11 @@
 
   ## Screenshots / Demo
   <kbd>![screenshot-demo](undefined)</kbd>
-  
-  ## Description 
 
-  #### Project Objective
+  ## Project Objective
   generate a readme
   
-  #### User Story
+  ## User Story
   user wants everything
 
   ## Technologies 
