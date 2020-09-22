@@ -22,6 +22,8 @@
 
   ##  Project Links
   https://github.com/imbingz/Github-Readme-Template<br>
+  http://youtube.com<br>
+  https://mydrive.google.com
   
 
   ## Screenshots / Demo
