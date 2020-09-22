@@ -24,29 +24,19 @@ function generateREADME(answers) {
 	return ` 
   # ${answers.title.toUpperCase()}
 
-  <p>
-    <a href="https://github.com/${answers.username.trim().toLowerCase()}" target="_blank">
-      <img src="https://img.shields.io/github/followers/${answers.username
-				.trim()
-				.toLowerCase()}?label=Follow&logoColor=purple&style=social" alt="github-follow">
-    </a>
-    <a href="https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}" target="_blank">
-      <img src="https://img.shields.io/github/languages/count/${answers.username
-				.trim()
-				.toLowerCase()}/${answers.repoName.trim()}?color=important" alt="project-languages-used">
-    </a>
-    <a href="https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}" target="_blank">
-      <img src="https://img.shields.io/github/languages/top/${answers.username
-				.trim()
-				.toLowerCase()}/${answers.repoName.trim()}?color=blueviolet" alt="project-top-language">
-    </a>
-    <a href="https://choosealicense.com/licenses/${answers.license}/" target="_blank">
-      <img alt="license-mit" src="https://img.shields.io/badge/License-${answers.license
-				.toUpperCase()
-				.split('-')
-				.join('v')}-brightgreen.svg" />
-    </a>
-  </p>
+  [![github-follow](https://img.shields.io/github/followers/${answers.username
+      .trim()
+      .toLowerCase()}?label=Follow&logoColor=purple&style=social)](https://github.com/${answers.username.trim().toLowerCase()})
+  [![project-languages-used](https://img.shields.io/github/languages/count/${answers.username
+      .trim()
+      .toLowerCase()}/${answers.repoName.trim()}?color=important)](https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()})
+  [![project-top-language](https://img.shields.io/github/languages/top/${answers.username
+      .trim()
+      .toLowerCase()}/${answers.repoName.trim()}?color=blueviolet)](https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()})
+  [![license](https://img.shields.io/badge/License-${answers.license
+      .toUpperCase()
+      .split('-')
+      .join('v')}-brightgreen.svg)](https://choosealicense.com/licenses/${answers.license}/)
 
   ## Table of Content
   * [ Project Links ](#Project-Links)
@@ -76,8 +66,9 @@ function generateREADME(answers) {
   ${answers.userStory}
 
   ## Technologies 
-  ${answers.technologies}
-
+ 
+  ${ answers.technologies}
+  
   ## Installation
   ${answers.installation}
 
