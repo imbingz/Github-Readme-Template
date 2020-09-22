@@ -13,6 +13,15 @@ function generateREADME(answers) {
 			.trim()
 			.toLowerCase()}?label=Follow&logoColor=purple&style=social" alt="github-follow">
   </a>
+   <a href="https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}" target="_blank">
+    <img src="https://img.shields.io/github/languages/count/${answers.username
+			.trim()
+			.toLowerCase()}/${answers.repoName.trim()}?color=important" alt="project-languages-used">
+  </a>
+ 
+ <a href="https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}" target="_blank">
+    <img src="https://img.shields.io/github/languages/top/{answers.username.trim().toLowerCase()}/${answers.repoName.trim()}?color=blueviolet" alt="project-top-language">
+  </a>
   <a href="https://choosealicense.com/licenses/${answers.license}/" target="_blank">
     <img alt="license-mit" src="https://img.shields.io/badge/License-${answers.license
 			.toUpperCase()
@@ -24,13 +33,14 @@ function generateREADME(answers) {
   ## Table of Content
   * [ Project Links ](#Project-Links)
   * [ Screenshots / Demo ](#Screenshots)
-  * [ Description ](#Desciption)
+  * [ Project Objective ](#Project-Objective)
+  * [ User Story ](#User-Story)
   * [ Technologies ](#Technologies)
   * [ Installation ](#Installation)
   * [ Usage ](#Usage)
   * [ Credits and Reference ](#Credits-and-Reference)
   * [ Tests ](#Tests)
-  * [ Contact Author ](#Contact-Author)
+  * [ Author Contact ](#Author-Contact)
   * [ License ](#License)
   #
 
@@ -40,12 +50,11 @@ function generateREADME(answers) {
   ## Screenshots / Demo
   <kbd>![screenshot-demo](${answers.imageURL})</kbd>
   
-  ## Description 
 
-  #### Project Objective
+  ## Project Objective
   ${answers.objective}
   
-  #### User Story
+  ## User Story
   ${answers.userStory}
 
   ## Technologies 
@@ -63,7 +72,7 @@ function generateREADME(answers) {
   ## Tests
   ${answers.test}
 
-  ## Contact Author
+  ## Author Contact
   Contact the author with any questions! < /br>
   Github link: [${answers.username.trim().toLowerCase()}](https://github.com/${answers.username.trim().toLowerCase()})
   Email: ${answers.email}
@@ -72,11 +81,11 @@ function generateREADME(answers) {
   This project is [${answers.license.toUpperCase()}](https://choosealicense.com/licenses/${answers.license}/) licensed.<br />
 
   Copyright © ${year} [${answers.authorName.trim().toUpperCase()}]
-
-  _This README was generated with ❤️ by [${answers.username
-		.trim()
-		.toLowerCase()}](https://github.com/${answers.username.trim().toLowerCase()})_
-
+  
+  <hr>
+  <p align='center'><i>
+  This README was generated with ❤️ by ${answers.authorName.trim().toUpperCase()}
+  </i></p>
   `;
 }
 
