@@ -8,7 +8,7 @@
 
   ## Table of Content
   * [ Project Links ](#Project-Links)
-  * [ Screenshorts-Demo ](#Screenshots-Demo)
+  * [ Screenshots-Demo ](#Screenshots-Demo)
   * [ Project Objective ](#Project-Objective)
   * [ User Story ](#User-Story)
   * [ Technologies ](#Technologies)
