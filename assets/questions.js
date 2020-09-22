@@ -5,26 +5,26 @@ const questions = [
 		message: 'Enter your FULL name',
 		name: 'authorName',
 		validate: function(name) {
-			// console.log(name.split(' ').length);
-			if (name.trim().split(' ').length >= 2) {
+			let pass = name.match(/^[a-zA-Z\s]+$/g);
+			if (pass && name.trim().split(' ').length >= 2) {
 				return true;
 			}
 
-			return 'It is required to enter your FULL name.';
+			return 'Please enter a valid FULL name.';
 		},
 	},
 	{
 		//Author Email
 		type: 'input',
 		message: 'Enter your email',
-		name: 'authorName',
+		name: 'email',
 		validate: function(email) {
-			// console.log(name.split(' ').length);
-			if (email) {
+			let pass = email.match(/\S+@\S+\.\S+/)
+			if (pass) {
 				return true;
 			}
 
-			return 'It is required to enter your email.';
+			return 'Please enter a valid email.';
 		},
 	},
 	{
@@ -193,11 +193,12 @@ const questions = [
 			},
 			{
 				name: 'APACHE 2.0',
-				value: 'apache-2.0'
+				value: 'apache-2.0',
 			},
 			{
 				name: 'Mozilla Public 2.0',
 				value: 'mpl-2.0'
+
 			},
 			{
 				name: 'The Unlicense',
@@ -208,29 +209,6 @@ const questions = [
 				value: 'bsl-1.0'
 			}
 		],
-	},
-	{
-		//Check on Twitter follow
-		type: 'confirm',
-		name: 'twitter',
-		message: 'Would you like others to connect with you on Twitter?',
-		default: false,
-	},
-	{
-		// Get twitter username
-		type: 'input',
-		name: 'twitterName',
-		message: 'Enter your Twitter username',
-		when: function(answers) {
-			return answers.twitter !== false;
-		},
-		validate: function(twitterName) {
-			if (twitterName) {
-				return true;
-			}
-
-			return 'Enter your Twitter username for others to connect with you on Twitter';
-		},
 	},
 ];
 
