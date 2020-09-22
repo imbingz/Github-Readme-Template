@@ -40,7 +40,7 @@ function generateREADME(answers) {
 
   ## Table of Content
   * [ Project Links ](#Project-Links)
-  * [ Screenshots / Demo ](#Screenshots)
+  * [ Screenshots-Demo ](#Screenshots)
   * [ Project Objective ](#Project-Objective)
   * [ User Story ](#User-Story)
   * [ Technologies ](#Technologies)
@@ -56,7 +56,7 @@ function generateREADME(answers) {
   https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()}<br>
   ${additionalProjectLinks}
 
-  ## Screenshots / Demo
+  ## Screenshots-Demo
   ${screenshots}
   
   ## Project Objective
