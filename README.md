@@ -73,9 +73,5 @@
   <p align='center'><i>
   This README was generated with ❤️ by BING Z
   </i></p>
-<<<<<<< HEAD
-  
-=======
   
   
->>>>>>> refs/remotes/origin/master
