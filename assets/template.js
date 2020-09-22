@@ -66,8 +66,9 @@ function generateREADME(answers) {
   ${answers.userStory}
 
   ## Technologies 
- 
+  \`\`\`
   ${ answers.technologies}
+  \`\`\`
   
   ## Installation
   ${answers.installation}
