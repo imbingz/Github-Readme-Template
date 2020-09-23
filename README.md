@@ -25,7 +25,7 @@
   https://youtu.be/fjT4mdEXFC4
 
   ## Screenshots-Demo
-  <kbd>![screenshot-demo1](https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80)</kbd><kbd>![screenshot-demo2](https://images.unsplash.com/photo-1433838552652-f9a46b332c40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80)</kbd>
+  <kbd>![screenshot-demo1](./assets/images/cli-readme.gif)</kbd><kbd>![screenshot-demo2](./assets/images/readme.gif)</kbd>
   
   ## Project Objective
   To create a command-line application that dynamically generates a professional README.md from a user's input using the Inquirer package.  This will allow a project creator to spend more time working on finishing the project and less time creating a good README.
@@ -48,7 +48,7 @@
   The following links have helped me with this project. <br> [Choose A License](https://choosealicense.com/), [Build A Budge](https://shields.io/), [How to Add Badges to a GitHub Repository](https://medium.com/better-programming/add-badges-to-a-github-repository-716d2988dc6a), [Regex Tester](https://regex101.com/), [How to Validate URL](https://stackoverflow.com/questions/161738/what-is-the-best-regular-expression-to-check-if-a-string-is-a-valid-url), [Inquirer Package Example - Pizza](https://github.com/SBoudrias/Inquirer.js/blob/master/packages/inquirer/examples/pizza.js)
 
   ## Tests
-  Use it and see if there are any  bugs with different inputs such as full name, email, urls and etc.
+  npm test
 
   ## Author Contact
   Contact the author with any questions!<br>
