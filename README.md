@@ -58,7 +58,7 @@
   ## License
   This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.<br />
 
-  Copyright © 2020 [BING Z]
+  Copyright © 2020 [BING Z](https://github.com/imbingz)
   
   <hr>
   <p align='center'><i>
