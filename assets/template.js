@@ -92,7 +92,7 @@ function generateREADME(answers) {
   ## License
   This project is [${answers.license.toUpperCase()}](https://choosealicense.com/licenses/${answers.license}/) licensed.<br />
 
-  Copyright © ${year} [${answers.authorName.trim().toUpperCase()}]
+  Copyright © ${year} [${answers.authorName.trim().toUpperCase()}](https://github.com/${answers.username.trim().toLowerCase()})
   
   <hr>
   <p align='center'><i>
