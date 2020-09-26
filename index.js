@@ -6,10 +6,10 @@ const { writeFile } = require('fs');
 const { promisify } = require('util');
 
 //Import questions.js 
-const questions = require('./assets/questions')
+const questions = require('./lib/questions')
 
 // Import template.js
-const generateREADME = require('./assets/template')
+const generateREADME = require('./lib/template')
 
 
 // Wrap fs.writeFile inside util.promisify
